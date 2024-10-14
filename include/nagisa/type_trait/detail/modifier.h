@@ -2,7 +2,7 @@
 
 #include "./environment.h"
 
-NGS_BUILD_LIB_DETAIL_BEGIN
+NAGISA_BUILD_LIB_DETAIL_BEGIN
 
 template<class T, class Modifier>
 using add_const_like_t = ::std::conditional_t<::std::is_const_v<Modifier>, ::std::add_const_t<T>, ::std::remove_const_t<T>>;
@@ -26,4 +26,4 @@ using add_cv_like_t = add_const_like_t<add_volatile_like_t<T, Modifier>, Modifie
 template<class T, class Modifier>
 using add_cvref_like_t = add_reference_like_t<add_cv_like_t<T, Modifier>, Modifier>;
 
-NGS_BUILD_LIB_DETAIL_END
+NAGISA_BUILD_LIB_DETAIL_END
